@@ -1,14 +1,11 @@
-import React, { ReactNode } from 'react';
+import React, { FC, PropsWithChildren} from 'react';
 import { theme } from '@/theme';
 import { ThemeProvider } from '@emotion/react';
 
-interface ThemeWrapperProps {
-  children: ReactNode;
-}
 
-const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
+const ThemeWrapper: FC<PropsWithChildren<unknown>> = ({children}) => {
   return (
-    <ThemeProvider theme={theme} children={undefined}>
+    <ThemeProvider theme={theme}>
       {children}
     </ThemeProvider>
   );

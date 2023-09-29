@@ -1,8 +1,9 @@
 import AuthNav from "../AuthNav/AuthNav";
 import Navigation from "../Navigation/Navigation";
 import { Header } from "./AppBar.styled";
+import { FC } from 'react';
 
-export default function AppBar() {
+const AppBar: FC = () => {
     return (
         <Header>
             <Navigation />
@@ -10,3 +11,5 @@ export default function AppBar() {
         </Header>
     )
 }
+
+export default AppBar

@@ -1,11 +1,14 @@
-import React, { ReactNode } from 'react';
+import { FC, PropsWithChildren} from 'react';
 import AppBar from '../AppBar/AppBar';
 
 
-export default function Layout() {
+const Layout: FC<PropsWithChildren<unknown>> = ({children}) => {
     return (
-        <>
+        <div>
         <AppBar/>
-        </>
+        {children}
+        </div>
     )
 }
+
+export default Layout

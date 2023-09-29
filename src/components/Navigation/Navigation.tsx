@@ -1,9 +1,12 @@
 import { NavLink } from "./Navigation.styled";
+import { FC } from 'react';
 
-export default function Navigation() {
+const Navigation: FC = () => {
     return (
-      <>
-        <NavLink to='/'>Home</NavLink>
-      </>
+      <div>
+        <NavLink href='/'>Home</NavLink>
+      </div>
     )
-  }
+}
+
+export default Navigation

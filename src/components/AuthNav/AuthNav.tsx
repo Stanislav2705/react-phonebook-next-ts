@@ -1,10 +1,13 @@
 import { NavLink } from "./AuthNav.styled";
+import { FC } from 'react';
 
-export default function AuthNav() {
+const AuthNav: FC = () => {
     return (
-      <>
-        <NavLink to='/register'>Register</NavLink>
-        <NavLink to='/login'>Log In</NavLink>
-      </>
+      <div>
+        <NavLink href='/register'>Register</NavLink>
+        <NavLink href='/login'>Log In</NavLink>
+      </div>
     )
-  }
+}
+
+export default AuthNav

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
+
 export const NavLink = styled(Link)`
   display: inline-block;
   text-decoration: none;
@@ -11,3 +12,6 @@ export const NavLink = styled(Link)`
     color: orange;
   }
 `;
+
+
+
