@@ -1,4 +1,40 @@
-export const theme = {
+export interface Theme {
+  breakpoints: string[];
+  colors: {
+    black: string;
+    white: string;
+    text: string;
+    primary: string;
+    secondary: string;
+    error: string;
+  };
+  space: number[];
+  fontSizes: {
+    xs: string;
+    s: string;
+    m: string;
+    l: string;
+    xl: string;
+  };
+  fontWeights: {
+    normal: number;
+    semibold: number;
+    bold: number;
+  };
+  borders: {
+    none: string;
+    normal: string;
+  };
+  radii: {
+    none: string;
+    normal: string;
+  };
+  shadows: {
+    normal: string;
+  };
+}
+
+export const theme: Theme = {
     breakpoints: ['440px'],
     colors: {
       black: '#000',
