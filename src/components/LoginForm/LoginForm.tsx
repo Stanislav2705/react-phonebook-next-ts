@@ -4,24 +4,16 @@ import { FormStyled, Input, Label, StyledButton } from '@/shared/FormikStyle/For
 import React,{ FC } from 'react';
 
 interface FormValues {
-  name: string | number;
-  email: string | number;
-  password: string | number;
+    email: string | number;
+    password: string | number;
 }
 
 const initialValues = {
-  name: '',
   email: '',
   password: '',
 };
 
 const validationSchema = yup.object().shape({
-  name: yup
-    .string()
-    .trim('The contact name cannot include leading and trailing spaces')
-    .strict(true)
-    .required('Please fill in the name'),
-
   email: yup
     .string()
     .email('Email must be a valid')
@@ -35,7 +27,7 @@ const validationSchema = yup.object().shape({
     .required('Please fill in the password'),
 });
 
-const RegisterForm: React.FC<{}> = () => {
+const LoginForm: React.FC<{}> = () => {
 
   const handleSubmit = (values: FormValues) => {
     console.log(values);
@@ -49,11 +41,6 @@ const RegisterForm: React.FC<{}> = () => {
     >
       <FormStyled>
         <Label>
-          Username
-          <Input type='text' name='name'/>
-        </Label>
-
-        <Label>
           Email
           <Input type='email' name='email'/>
         </Label>
@@ -63,10 +50,10 @@ const RegisterForm: React.FC<{}> = () => {
           <Input type='password' name='password'/>
         </Label>
 
-        <StyledButton type='submit'>Register</StyledButton>
+        <StyledButton type='submit'>Log In</StyledButton>
       </FormStyled>
     </Formik>
   )
 }
 
-export default RegisterForm;
+export default LoginForm

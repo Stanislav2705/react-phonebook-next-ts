@@ -6,7 +6,7 @@ const Layout: FC<PropsWithChildren<unknown>> = ({children}) => {
     return (
         <div>
         <AppBar/>
-        {children}
+        <main>{children}</main>
         </div>
     )
 }

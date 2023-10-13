@@ -7,14 +7,14 @@ import { NextPage } from "next";
 const Register: NextPage = () => {
     return (
     <Layout>
-        {/* <HelmetProvider> */}
-        {/* <main> */}
-        {/* <Helmet> */}
-        Registration
-        {/* </Helmet> */}
-        {/* <RegisterForm/> */}
-        {/* </main> */}
-        {/* </HelmetProvider> */}
+        <HelmetProvider>
+        <main>
+        <Helmet>
+            <title>Register</title>
+        </Helmet>
+        <RegisterForm/>
+        </main>
+        </HelmetProvider>
     </Layout>
     )
 }
