@@ -2,6 +2,7 @@
   "name": "react-phonebook-next-ts",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Stanislav2705.github.io/react-phonebook-next-ts/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
