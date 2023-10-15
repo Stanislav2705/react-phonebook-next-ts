@@ -5,7 +5,7 @@ import { FC } from 'react';
 
 const Home: FC = () => {
     return (
-      <Layout>
+      <>
         <Box
         display='flex'
         alignItems='center'
@@ -16,7 +16,7 @@ const Home: FC = () => {
             CREATE YOUR OWN PHONEBOOK
             </Title>
         </Box>
-      </Layout>
+      </>
     )
   }
 

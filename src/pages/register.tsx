@@ -6,7 +6,7 @@ import { NextPage } from "next";
 
 const Register: NextPage = () => {
     return (
-    <Layout>
+    <>
         <HelmetProvider>
         <main>
         <Helmet>
@@ -15,7 +15,7 @@ const Register: NextPage = () => {
         <RegisterForm/>
         </main>
         </HelmetProvider>
-    </Layout>
+    </>
     )
 }
 
