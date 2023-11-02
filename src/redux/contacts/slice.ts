@@ -12,10 +12,9 @@ import {
 
 const extraActions = [addContact, deleteContact, fetchContacts];
 
-const getActions = (type: string) => extraActions.map(action=> action[type]);
+const getActions = (type: 'pending' | 'fulfilled' | 'rejected') => extraActions.map(action=> action[type]);
 
 export interface ContsactsState {
-    state: { payload: any; type: string; };
     // [x: string]: { payload: any; type: string; };
     // state: { payload: any; type: string; };
     items: any[];
