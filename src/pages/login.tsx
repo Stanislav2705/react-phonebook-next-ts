@@ -7,7 +7,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 const Login: NextPage = () => {
     return (
         <>
-            <Head>Login</Head>
             <HelmetProvider>
             <main>
             <Helmet>

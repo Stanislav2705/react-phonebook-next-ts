@@ -1,14 +1,6 @@
 import { PayloadAction, createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { addContact, deleteContact, fetchContacts } from './requests';
-import {
-  addContactSuccessReducer,
-  deleteContactSuccessReducer,
-  fetchContactsSuccessReduser,
-  fulfilledReducer,
-  pendingReducer,
-  rejectedReducer,
-} from './reducers';
-
+import { addContactSuccessReducer, deleteContactSuccessReducer, fetchContactsSuccessReduser, fulfilledReducer, pendingReducer, rejectedReducer } from './reducers';
 
 const extraActions = [addContact, deleteContact, fetchContacts];
 

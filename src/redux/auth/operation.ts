@@ -32,6 +32,12 @@ interface Credentials {
   // Define other properties in the credentials object as needed
 }
 
+interface CredentialsLog {
+  email: string;
+  password: string;
+  // Define other properties in the credentials object as needed
+}
+
 export const register = createAsyncThunk<RegisterResponse, Credentials>(
   'auth/register',
   async (credentials, thunkAPI) => {
@@ -45,7 +51,7 @@ export const register = createAsyncThunk<RegisterResponse, Credentials>(
   }
 );
 
-export const logIn = createAsyncThunk<RegisterResponse, Credentials>(
+export const logIn = createAsyncThunk<RegisterResponse, CredentialsLog>(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
@@ -73,7 +79,7 @@ export const logOut = createAsyncThunk<void, void>(
 export const refreshUser = createAsyncThunk<RegisterResponse, void>(
   'auth/refresh',
   async (_, thunkAPI) => {
-    const { token } = (thunkAPI.getState()as RootState).auth;
+    const { token } = (thunkAPI.getState() as RootState).auth;
 
     if (!token) {
       return thunkAPI.rejectWithValue('No valid token');

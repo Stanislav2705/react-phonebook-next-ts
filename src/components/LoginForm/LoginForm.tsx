@@ -2,10 +2,16 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { FormStyled, Input, Label, StyledButton } from '@/shared/FormikStyle/FormikStyle';
 import React,{ FC } from 'react';
+import { useDispatch } from 'react-redux';
+import { useAuth } from '@/hooks/useAuth';
+import { logIn } from '@/redux/auth/operation';
+import { Error } from '@/shared/Error/Error.styled';
+import { AppDispatch } from '@/redux/store';
+import ErrorForm from '../ErrorForm/ErrorForm';
 
 interface FormValues {
-    email: string | number;
-    password: string | number;
+    email: string;
+    password: string;
 }
 
 const initialValues = {
@@ -28,9 +34,11 @@ const validationSchema = yup.object().shape({
 });
 
 const LoginForm: React.FC<{}> = () => {
+  const dispatch: AppDispatch = useDispatch();
+  const { error } = useAuth();
 
   const handleSubmit = (values: FormValues) => {
-    console.log(values);
+    dispatch(logIn(values));
   };
 
   return (
@@ -44,11 +52,15 @@ const LoginForm: React.FC<{}> = () => {
           Email
           <Input type='email' name='email'/>
         </Label>
+        <ErrorForm name='email'/>
 
         <Label>
           Password
           <Input type='password' name='password'/>
         </Label>
+        <ErrorForm name='password'/>
+
+        {error && <Error>{error}</Error>}
 
         <StyledButton type='submit'>Log In</StyledButton>
       </FormStyled>
