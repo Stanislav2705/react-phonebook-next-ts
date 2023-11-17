@@ -4,11 +4,11 @@ import { logOut } from "@/redux/auth/operation";
 import { Button } from "@/shared/Button/Button.styled";
 import { useAuth } from "@/hooks/useAuth";
 import { AppDispatch } from "@/redux/store";
-
+import User from "@/shared/UserTypes/User";
 
 export default function UserMenu() {
   const dispatch: AppDispatch = useDispatch();
-  const { user } = useAuth();
+  const { user } = useAuth() as { user: User };
 
   const handleLogOut = () => dispatch(logOut())
 

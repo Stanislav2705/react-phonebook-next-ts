@@ -35,7 +35,7 @@ const validationSchema = yup.object().shape({
 
 const LoginForm: React.FC<{}> = () => {
   const dispatch: AppDispatch = useDispatch();
-  const { error } = useAuth();
+  const { error } = useAuth() as  { error: string } ;
 
   const handleSubmit = (values: FormValues) => {
     dispatch(logIn(values));
@@ -60,7 +60,7 @@ const LoginForm: React.FC<{}> = () => {
         </Label>
         <ErrorForm name='password'/>
 
-        {error && <Error>{error}</Error>}
+        {error === 'string' && <Error>{error}</Error>}
 
         <StyledButton type='submit'>Log In</StyledButton>
       </FormStyled>

@@ -4,9 +4,9 @@ import { FormStyled, Input, Label, StyledButton } from '@/shared/FormikStyle/For
 import React,{ FC } from 'react';
 
 interface FormValues {
-  name: string | number;
-  email: string | number;
-  password: string | number;
+  name: string;
+  email: string;
+  password: string;
 }
 
 const initialValues = {
