@@ -8,6 +8,7 @@ import { logIn } from '@/redux/auth/operation';
 import { Error } from '@/shared/Error/Error.styled';
 import { AppDispatch } from '@/redux/store';
 import ErrorForm from '../ErrorForm/ErrorForm';
+import { useRouter } from 'next/router';
 
 interface FormValues {
     email: string;
@@ -34,12 +35,21 @@ const validationSchema = yup.object().shape({
 });
 
 const LoginForm: React.FC<{}> = () => {
+  const router = useRouter();
   const dispatch: AppDispatch = useDispatch();
   const { error } = useAuth() as  { error: string } ;
 
-  const handleSubmit = (values: FormValues) => {
-    dispatch(logIn(values));
+  const handleSubmit = async (values: FormValues) => {
+    try {
+      await dispatch(logIn(values));
+      
+      router.push('/contacts');
+    } catch (error: any) {
+      console.error('Ошибка входа:', error);
+    }
+    
   };
+   
 
   return (
     <Formik

@@ -10,7 +10,7 @@ const Navigation: FC = () => {
     return (
       <div>
         <NavLink href='/' className={pathname === '/' ? 'active' : ''}>Home</NavLink>
-        {isLoggedIn && <NavLink href='/contacts'>Contacts</NavLink>}
+        {isLoggedIn && <NavLink href='/contacts' className={pathname === '/contacts' ? 'active' : ''}>Contacts</NavLink>}
       </div>
     )
 }

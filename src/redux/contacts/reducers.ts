@@ -5,8 +5,8 @@ export const fetchContactsSuccessReduser = (state: ContsactsState, action: Paylo
     state.items = action.payload;
   };
   
-  export const addContactSuccessReducer = (state: ContsactsState, payload: PayloadAction<any>) => {
-    state.items.push(payload);
+  export const addContactSuccessReducer = (state: ContsactsState, action: PayloadAction<any>) => {
+    state.items.push(action.payload);
   };
   
   export const deleteContactSuccessReducer = (state:ContsactsState, action: PayloadAction<{ id: number }>) => {
