@@ -5,12 +5,17 @@ import { Button } from "@/shared/Button/Button.styled";
 import { useAuth } from "@/hooks/useAuth";
 import { AppDispatch } from "@/redux/store";
 import User from "@/shared/UserTypes/User";
+import { useRouter } from 'next/router';
 
 export default function UserMenu() {
   const dispatch: AppDispatch = useDispatch();
   const { user } = useAuth() as { user: User };
+  const router = useRouter();
 
-  const handleLogOut = () => dispatch(logOut())
+  const handleLogOut = () => {
+    dispatch(logOut())
+    router.push('/login');
+  } 
 
   return (
     <Box>

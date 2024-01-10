@@ -8,6 +8,7 @@ import { register } from '@/redux/auth/operation';
 import { useAuth } from '@/hooks/useAuth';
 import ErrorForm from '../ErrorForm/ErrorForm';
 import { Error } from '@/shared/Error/Error.styled';
+import { useRouter } from 'next/router';
 
 interface FormValues {
   name: string;
@@ -42,11 +43,19 @@ const validationSchema = yup.object().shape({
 });
 
 const RegisterForm: React.FC<{}> = () => {
+  const router = useRouter();
   const dispatch: AppDispatch = useDispatch();
   const { error } = useAuth() as  { error: string } ;
 
-  const handleSubmit = (values: FormValues) => {
-    dispatch(register(values));
+  const handleSubmit = async (values: FormValues) => {
+    // dispatch(register(values));
+    try {
+      await dispatch(register(values));
+      
+      router.push('/login');
+    } catch (error: any) {
+      console.error('Ошибка входа:', error);
+    }
   };
 
   return (
