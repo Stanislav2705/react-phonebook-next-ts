@@ -6,9 +6,10 @@ import { useAuth } from "@/hooks/useAuth";
 import { AppDispatch } from "@/redux/store";
 import User from "@/shared/UserTypes/User";
 import { useRouter } from 'next/router';
+import { useAppDispatch } from "@/redux/hook";
 
 export default function UserMenu() {
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { user } = useAuth() as { user: User };
   const router = useRouter();
 

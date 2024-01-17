@@ -9,6 +9,7 @@ import { Error } from '@/shared/Error/Error.styled';
 import { AppDispatch } from '@/redux/store';
 import ErrorForm from '../ErrorForm/ErrorForm';
 import { useRouter } from 'next/router';
+import { useAppDispatch } from '@/redux/hook';
 
 interface FormValues {
     email: string;
@@ -34,9 +35,9 @@ const validationSchema = yup.object().shape({
     .required('Please fill in the password'),
 });
 
-const LoginForm: React.FC<{}> = () => {
+const LoginForm: React.FC<FormValues> = () => {
   const router = useRouter();
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { error } = useAuth() as  { error: string } ;
 
   const handleSubmit = async (values: FormValues) => {

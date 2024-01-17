@@ -6,7 +6,7 @@ export const UserName = styled.p`
 `
 
 export const Box = styled.div`
-    display: 'flex';
-    align-items: 'center';
+    display: flex;
+    align-items: center;
     grid-gap: 4px;
 `

@@ -12,7 +12,7 @@ const Login: NextPage = () => {
             <Helmet>
             <title>Login</title>
             </Helmet>
-            <LoginForm />
+            <LoginForm email={""} password={""} />
             </main>
             </HelmetProvider>
         </>

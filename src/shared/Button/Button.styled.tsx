@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 
 export const Button = styled.button`
-  display: block;
   padding: 4px;
   border: 1px solid #ffa500;
   border-radius: 4px;
