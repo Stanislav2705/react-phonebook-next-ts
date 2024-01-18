@@ -1,11 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { ContsactsState } from './slice';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get('/contacts');
+      // if (!data) {
+      //   return rejectWithValue("Server error!");
+      // }
       return data;
     } catch (error: any) {
       return rejectWithValue(error.message);
