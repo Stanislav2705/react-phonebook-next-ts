@@ -6,6 +6,7 @@ import { Error } from "@/shared/Error/Error.styled";
 import Loader from "@/shared/Loader/Loader";
 import FormPhoneBook from "../FormPhoneBook/FormPhoneBook";
 import { selectIsLoading } from "@/redux/selectors";
+import Filter from "../Filter/Filter";
 
 const PhoneBook: React.FC<{}> = () => {
     const dispatch = useAppDispatch();
@@ -19,7 +20,7 @@ const PhoneBook: React.FC<{}> = () => {
             <FormPhoneBook name={""} number={""} />
             </BlockPhone>
             <BlockPhone title="Contacts">
-            {/* <Filter /> */}
+            <Filter />
             {isLoading && <Loader />}
             {/* {error && <Error>Something goes wrong. {error}.</Error>}
             {contacts.length > 0 && <PhoneBookList />}

@@ -1,5 +1,5 @@
-import { PayloadAction } from "@reduxjs/toolkit";
-const { createSlice } = require('@reduxjs/toolkit');
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
 
 export interface FilterState {
   value: string;
